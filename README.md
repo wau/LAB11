@@ -2,7 +2,7 @@
 
 # vue-skeleton
 
-## NOTA: A route produtcs/ esta renomeada para shop/
+## NOTA: A route products/ esta renomeada para shop/
 
 ## Project setup
 ```
