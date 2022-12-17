@@ -40,6 +40,8 @@
 		},
     async addOrder({commit, rootGetters}, order) {
 			try {
+        console.log("stringify");
+        console.log(JSON.stringify(order));
 				const response = await fetch(`http://daw.deei.fct.ualg.pt/~a72730/LAB11/api/orders.php?session_id=${rootGetters['user/getUser'].session_id}`, {
 					method: 'POST',
 					body: JSON.stringify(order),

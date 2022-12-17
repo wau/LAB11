@@ -17,7 +17,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['user_id'])) {
     $json=file_get_contents('php://input');
     // {"user_id":"19","totalAmount":"102","status_id":"1","items":[{"id":"1","quantity":"1"},{"id":"2","quantity":"2"}]}
     $data = json_decode($json, true);
-    echo $data;
 
     if (isset($data['totalAmount']) && isset($data['status_id']) && isset($data['items'])) {
         // ligação base de dados

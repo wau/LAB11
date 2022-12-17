@@ -149,37 +149,21 @@ export default {
       return items;
     },
 
-    async getLastOrderID() {
-      const orders = await this.$store.dispatch('orders/getMyOrdersFromDB');
-      
-      console.log("orders");
-      console.log(orders);
-
-      if (orders == undefined)
-        return 0;
-    
-      let maxID = 0;
-      
-      for (let i = 0; i < orders.length; i++) {
-        if (orders[i].status_id > maxID) maxID = orders[i].status_id;
-      }
-      return maxID;
-    },
-
     async makeOrder() {
       //{"user_id":"19","totalAmount":"102","status_id":"1","items":[{"id":"1","quantity":1},{"id":"2","quantity":2}]}
       this.order.user_id = this.$store.getters['user/getUser'].id.toString();
       this.order.totalAmount = this.totalPrice.toString();
-      this.getLastOrderID()
       
       this.order.status_id = 1;
       
       
+      //this.order.items = JSON.stringify(this.convertItems());
       this.order.items = this.convertItems();
 
       console.log(this.order);
       const orderPlaced = await this.$store.dispatch('orders/addOrder', this.order);
       if (orderPlaced) {
+        console.log("order placed");
         this.$store.commit('basket/clearBasket');
         this.$router.push({ path: '/message/3' });
       }

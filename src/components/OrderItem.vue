@@ -14,7 +14,7 @@
 
 
     <button class="btn btn-primary" @click="showItems=!showItems" style="background-color: #5F8575; border: #5F8575;">
-        <h7> Show items </h7>
+        <h6> Show items </h6>
         <i v-if="!showItems" class="bi bi-caret-down-fill"></i>
         <i v-else class="bi bi-caret-up-fill"></i>
     </button>
