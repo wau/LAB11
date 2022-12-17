@@ -1,5 +1,5 @@
 // vue.config.js
 module.exports = {
-  publicPath: '/LAB11/dist',
+  publicPath: '/~a72730/LAB11/dist',
   //lintOnSave: false
 }
