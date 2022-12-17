@@ -1,4 +1,8 @@
+
+
 # vue-skeleton
+
+## NOTA: A route produtcs/ esta renomeada para shop/
 
 ## Project setup
 ```
